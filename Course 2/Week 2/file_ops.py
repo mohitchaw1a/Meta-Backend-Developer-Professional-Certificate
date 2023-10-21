@@ -14,13 +14,13 @@ def read_file(file_name):
         string: contents of the given file.
     """
     ### WRITE SOLUTION HERE
-    with open(file_name, 'r') as file:
-        read = file.readlines()
-        s = ""
-        for i in read:
-            s += i
-        print(s)
-        return s
+    s=""
+    with open(file_name,'r') as file:
+        l=file.readlines()
+        for i in l:
+            s+=i
+    print(s)
+    return s
     raise NotImplementedError()
 
 def read_file_into_list(file_name):
@@ -38,13 +38,13 @@ def read_file_into_list(file_name):
         list: a list where each element is a line in the file.
     """
     ### WRITE SOLUTION HERE
-    with open(file_name, 'r') as file:
-        read = file.readline()
-        list = []
-        while(list!=""):
-            list.append(read)
-            read = file.readline()
-        return list
+    l=[]
+    with open(file_name,'r') as file:
+        s=file.readline()
+        while(s!=""):
+            l.append(s)
+            s=file.readline()
+    return l
     raise NotImplementedError()
 
 def write_first_line_to_file(file_contents, output_filename):
@@ -64,10 +64,10 @@ def write_first_line_to_file(file_contents, output_filename):
     """
     ### WRITE SOLUTION HERE
     print(file_contents)
-    line = file_contents.split("\n")[0]
-    with open(output_filename,'w') as file:
-        file.write(line)
-    raise NotImplementedError()
+    s=file_contents.split('\n')[0]
+    with open(output_filename,'w') as op:
+        op.write(s)
+    # raise NotImplementedError()
 
 
 def read_even_numbered_lines(file_name):
@@ -85,16 +85,15 @@ def read_even_numbered_lines(file_name):
         list: a list of the even-numbered lines of the file
     """
     ### WRITE SOLUTION HERE
-    with open(file_name, 'r') as file:
-        read = file.readlines()
-        list = []
-        c = 1
-        for i in read:
+    l=[]
+    with open(file_name,'r') as file:
+        s=file.readlines()
+        c=1
+        for i in s:
             if(c%2==0):
-                list.append(i)
-            c +=1
-        return list           
-
+                l.append(i)
+            c+=1
+    return l
     raise NotImplementedError()
 
 def read_file_in_reverse(file_name):
@@ -106,21 +105,20 @@ def read_file_in_reverse(file_name):
         3. Print the list
         4. Return the list
 
-    Args:   
+    Args:
         file_name: the name of the file to be read
 
     Returns:
         list: list of the lines of the file in reverse order.
     """
     ### WRITE SOLUTION HERE
-    with open(file_name, 'r') as file:
-        read = file.readlines()
-        list = []
-        for line in range(len(read)-1,-1,-1):
-            list.append(read[line])
-    print(list)
-    return list
-
+    l=[]
+    with open(file_name,'r') as file:
+        s=file.readlines()
+        for i in range(len(s)-1,-1,-1):
+            l.append(s[i])
+    print(l)
+    return l
     raise NotImplementedError()
 
 '''
@@ -128,11 +126,11 @@ Here are some sample commands to help you run/test your implementations.
 Feel free to uncomment/modify/add to them as you wish.
 '''
 def main():
-    file_contents = read_file("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt")
-    print(read_file_into_list("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt"))
-    write_first_line_to_file(file_contents, "d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt")
-    print(read_even_numbered_lines("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt"))
-    print(read_file_in_reverse("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt"))
+    file_contents = read_file("sampletext.txt")
+    print(read_file_into_list("sampletext.txt"))
+    write_first_line_to_file(file_contents, "online.txt")
+    print(read_even_numbered_lines("sampletext.txt"))
+    print(read_file_in_reverse("sampletext.txt"))
 
 if __name__ == "__main__":
-    main()      
+    main()
