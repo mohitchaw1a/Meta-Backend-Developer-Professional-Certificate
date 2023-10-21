@@ -128,7 +128,7 @@ Feel free to uncomment/modify/add to them as you wish.
 def main():
     file_contents = read_file("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt")
     print(read_file_into_list("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt"))
-    write_first_line_to_file(file_contents, "online.txt")
+    write_first_line_to_file(file_contents, "newfile.txt")
     print(read_even_numbered_lines("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt"))
     print(read_file_in_reverse("d:\GIT\Meta-Backend-Developer-Professional-Certificate\Course 2\Week 2\sampletext.txt"))
 
